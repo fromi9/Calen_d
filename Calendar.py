@@ -1,9 +1,8 @@
-input_text = input('Укажите год, на который надо составить календарь:')
+input_text = input('Specify the year for which the calendar should be made: ')
 
 year = int(input_text)
 
-months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 def is_leap_year(year):
     if year % 4 != 0:
@@ -17,7 +16,6 @@ def is_leap_year(year):
         is_leap = True
     return is_leap
 
-
 def get_duration(year_value, month_index):
     if month_index in [3, 5, 8, 10]:
         duration = 30
@@ -27,7 +25,6 @@ def get_duration(year_value, month_index):
         duration = 31
         
     return duration
-
 
 def print_days(days_in_month, start_day):
     print('   ' * start_day, end='')
@@ -41,11 +38,9 @@ def print_days(days_in_month, start_day):
     if (days_in_month + start_day) % 7 != 0:
         print()
             
-
 def print_header(year_value, month_index):    
     print(months[month_index], year_value)
-    print('Пн Вт Ср Чт Пт Сб Вс')
-
+    print('Mon Tue Wed Thu Fri Sat Sun')
 
 def get_starting_day(year):
     d = 1
@@ -58,7 +53,6 @@ def adjust_start_day(start_day, days_in_month):
     result = (start_day + days_in_month) % 7
     return result
     
-
 def print_calendar(year):
     start_day = get_starting_day(year)
 
